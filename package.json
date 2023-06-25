@@ -2,9 +2,9 @@
   "name": "streaming-service-backend",
   "version": "1.0.0",
   "description": "node.js proxy middleware",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "node index.js"
+    "vercel-build": "echo 'Skip Build'"
   },
   "author": "Cafecito",
   "license": "MIT",
