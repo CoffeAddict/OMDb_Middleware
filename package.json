@@ -2,9 +2,9 @@
   "name": "streaming-service-backend",
   "version": "1.0.0",
   "description": "node.js proxy middleware",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "node app.js"
+    "test": "node index.js"
   },
   "author": "Cafecito",
   "license": "MIT",

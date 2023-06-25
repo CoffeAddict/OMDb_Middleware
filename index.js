@@ -2,10 +2,10 @@ const dotenv = require('dotenv')
 const express = require('express')
 const jwt = require('jsonwebtoken');
 const app = express()
-const port = 3000
 
 dotenv.config()
 
+const port = process.env.PORT || 3000
 const apiKEY = process.env.API_KEY_VALUE
 const apiURL = process.env.API_BASE_URL
 
@@ -65,3 +65,6 @@ function returnError(res, status, message) {
     if (!res || !status || !message) {console.error('Missing function parameters'); return}
     res.status(status).json({message})
 }
+
+
+module.exports = app
