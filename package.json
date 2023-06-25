@@ -4,6 +4,7 @@
   "description": "node.js proxy middleware",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "vercel-build": "echo 'Skip Build'"
   },
   "author": "Cafecito",
