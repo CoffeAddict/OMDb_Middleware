@@ -37,6 +37,10 @@ app.get('/movie', function(req, res) {
     })
 })
 
+app.get('*', function(req, res){
+    returnError(res, 403, 'Not Found')
+});
+
 app.listen(port, () => {
     console.log(`IMDb Proxy Middleware Running...`)
 })
