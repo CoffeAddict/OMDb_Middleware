@@ -1,13 +1,19 @@
 const dotenv = require('dotenv')
 const express = require('express')
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 const app = express()
+
 
 dotenv.config()
 
 const port = process.env.PORT || 3000
 const apiKEY = process.env.API_KEY_VALUE
 const apiURL = process.env.API_BASE_URL
+
+app.use(cors({
+    origin: process.env.APP_URL
+}))
 
 app.post('/login', function(req, res) {
     if (!req.query.user || !req.query.password) {returnError(res, 400, 'Bad Request'); return}
@@ -39,11 +45,11 @@ app.get('/movie', function(req, res) {
 
 app.get('*', function(req, res){
     returnError(res, 404, 'Not Found')
-});
+})
 
 app.post('*', function(req, res){
     returnError(res, 404, 'Not Found')
-});
+})
 
 app.listen(port, () => {
     console.log(`IMDb Proxy Middleware Running...`)
