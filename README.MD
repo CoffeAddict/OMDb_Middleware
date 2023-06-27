@@ -17,7 +17,7 @@ npm ci
 Here's the list on environment variables that need to be available:
 
 ```
-PORT (optional)
+PORT (optional, 3000 by default)
 API_BASE_URL
 API_KEY_VALUE
 AUTH_USER
