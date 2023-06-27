@@ -6,7 +6,9 @@ Requirements:
 
 - Node 20.x.x
 
-To setup run this command
+## Setup
+
+Make sure to install the dependencies:
 
 ```
 npm ci
