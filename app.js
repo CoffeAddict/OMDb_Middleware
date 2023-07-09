@@ -10,6 +10,7 @@ dotenv.config()
 const port = process.env.PORT || 3000
 const apiKEY = process.env.API_KEY_VALUE
 const apiURL = process.env.API_BASE_URL
+const devENV = process.env.NODE_ENV == 'development'
 
 // Config Cross Origin Resource Sharing
 app.use(cors({
@@ -34,7 +35,7 @@ app.post('/login', function(req, res) {
 
 app.get('/movie', function(req, res) {
     // Check token's validation
-    if (!checkAccessToken(req)) {returnError(res, 403, 'Unauthorized'); return}
+    if (!checkAccessToken(req) && !devENV) {returnError(res, 403, 'Unauthorized'); return}
 
     // Check request has required parameters
     if (Object.keys(req.query).length == 0) {returnError(res, 400, 'Bad Request'); return}
